@@ -1,7 +1,6 @@
 # Giai đoạn 1: Build ứng dụng Java
 # Sử dụng image Maven chính thức với JDK để build
-FROM maven:3.9.11-openjdk-17 AS build
-
+FROM maven:3.9-eclipse-temurin-17 AS build
 # Thiết lập thư mục làm việc trong container
 WORKDIR /app
 
