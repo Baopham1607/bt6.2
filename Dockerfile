@@ -1,6 +1,6 @@
 # Giai đoạn 1: Build ứng dụng Java
 # Sử dụng image Maven chính thức với JDK để build
-FROM maven:3.9-eclipse-temurin-17 AS build
+FROM maven:3.9.11-openjdk-17 AS build
 # Thiết lập thư mục làm việc trong container
 WORKDIR /app
 
@@ -18,7 +18,7 @@ RUN mvn package -DskipTests
 
 # Giai đoạn 2: Chạy ứng dụng trên Tomcat
 # Sử dụng image Tomcat chính thức, phiên bản phù hợp với JDK 17
-FROM tomcat:9.0-jdk17-temurin-focal
+FROM tomcat:11.0.0-jdk21-temurin
 
 # Xóa các ứng dụng mặc định của Tomcat để tránh xung đột
 RUN rm -rf /usr/local/tomcat/webapps/*
