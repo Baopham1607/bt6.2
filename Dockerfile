@@ -1,7 +1,3 @@
--------------------------------------------------------------------------------------------------
-
-# Giai đoạn 2: Chạy ứng dụng trên Tomcat
-# Sử dụng image Tomcat chính thức, phiên bản phù hợp với JDK 17
 FROM tomcat:11.0.0-jdk21-temurin
 
 # Xóa các ứng dụng mặc định của Tomcat để tránh xung đột
