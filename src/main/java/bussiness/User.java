@@ -1,4 +1,4 @@
-package vn.edu.hcmute.fit.demo1;
+package bussiness;
 
 import java.io.Serializable;
 

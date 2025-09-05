@@ -1,20 +1,4 @@
-# Giai đoạn 1: Build ứng dụng Java
-# Sử dụng image Maven chính thức với JDK để build
-FROM maven:3.9.11-openjdk-17 AS build
-# Thiết lập thư mục làm việc trong container
-WORKDIR /app
-
-# Sao chép tệp pom.xml để tải các thư viện (dependencies)
-COPY pom.xml .
-RUN mvn dependency:go-offline
-
-# Sao chép toàn bộ mã nguồn của dự án
-COPY src ./src
-
-# Chạy lệnh Maven để đóng gói ứng dụng thành tệp .war
-RUN mvn package -DskipTests
-
-#----------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
 # Giai đoạn 2: Chạy ứng dụng trên Tomcat
 # Sử dụng image Tomcat chính thức, phiên bản phù hợp với JDK 17
