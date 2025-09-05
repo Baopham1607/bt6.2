@@ -7,12 +7,10 @@
     <link rel="stylesheet" href="styles/main.css" type="text/css"/>
 </head>
 <body>
-<h1>Join our email list</h1>
-<p>To join our email list, enter your name and email address below.</p>
+<h1>Survey</h1>
+<p>Please fill out this survey to help us improve.</p>
 
-<form action="emailList" method="post">
-    <input type="hidden" name="action" value="add"/>
-
+<form action="survey" method="post">
     <label>Email:</label>
     <input type="email" name="email" required/><br/>
 
@@ -22,10 +20,24 @@
     <label>Last Name:</label>
     <input type="text" name="lastName" required/><br/>
 
-    <label>&nbsp;</label>
-    <input type="submit" value="Join Now" id="submit"/>
-</form>
+    <label>Heard From:</label>
+    <select name="heardFrom">
+        <option value="Search Engine">Search Engine</option>
+        <option value="Friend or Colleague">Friend or Colleague</option>
+        <option value="Social Media">Social Media</option>
+    </select><br/>
 
-<%@ include file="includes/footer.jsp" %>
+    <label>Receive Updates:</label>
+    <input type="checkbox" name="wantsUpdates" value="Yes"/><br/>
+
+    <label>Contact Via:</label>
+    <input type="radio" name="contactVia" value="Email" checked/> Email
+    <input type="radio" name="contactVia" value="Phone"/> Phone
+    <input type="radio" name="contactVia" value="Mail"/> Mail
+    <br/>
+
+    <label>&nbsp;</label>
+    <input type="submit" value="Submit"/>
+</form>
 </body>
 </html>

@@ -1,4 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <footer>
-    <p>&copy; ${currentYear} Le Thanh Son</p>
+    <p>&copy; ${currentYear} Pham Gia Bao</p>
 </footer>

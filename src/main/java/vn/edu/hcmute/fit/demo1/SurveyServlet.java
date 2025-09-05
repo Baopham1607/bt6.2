@@ -18,7 +18,6 @@ public class SurveyServlet extends HttpServlet {
         String email     = request.getParameter("email");
         String heardFrom = request.getParameter("heardFrom");
 
-        // Handle checkbox: if it's not checked, the parameter is null
         String wantsUpdates = request.getParameter("wantsUpdates");
         if (wantsUpdates == null) {
             wantsUpdates = "No";
@@ -26,9 +25,11 @@ public class SurveyServlet extends HttpServlet {
 
         String contactVia = request.getParameter("contactVia");
 
+        // Tạo đối tượng User và đặt vào request
         User user = new User(firstName, lastName, email, heardFrom, wantsUpdates, contactVia);
         request.setAttribute("user", user);
 
+        // Chuyển tiếp đến trang survey.jsp
         String url = "/survey.jsp";
         getServletContext().getRequestDispatcher(url).forward(request, response);
     }

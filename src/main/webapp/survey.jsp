@@ -1,16 +1,44 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 9/5/2025
-  Time: 6:30 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<!doctype html>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Email List - Thanks</title>
+  <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+</head>
+<body>
+<h1>Thanks for joining our email list</h1>
+
+<p>Here is the information that you entered:</p>
+
+<label>Email:</label>
+<span>${user.email}</span><br/>
+
+<label>First Name:</label>
+<span>${user.firstName}</span><br/>
+
+<label>Last Name:</label>
+<span>${user.lastName}</span><br/>
+
+<label>Heard From:</label>
+<span>${user.heardFrom}</span><br/>
+
+<label>Receive Updates:</label>
+<span>${user.wantsUpdates}</span><br/>
+
+<c:if test="${user.wantsUpdates == 'Yes'}">
+  <label>Contact Via:</label>
+  <span>${user.contactVia}</span><br/>
+</c:if>
+
+<p>To enter another email address, click on the Back button in your browser or the Return button below.</p>
+
+<form action="survey" method="get">
+  <input type="hidden" name="action" value="join"/>
+  <input type="submit" value="Return"/>
+</form>
+
+<%@ include file="includes/footer.jsp" %>
+</body>
 </html>
